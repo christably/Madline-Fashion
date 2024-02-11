@@ -12,6 +12,7 @@ function login() {
 }
 
 function register() {
+    validateForm();
     remReg.style.display = "none";
     remLog.style.display = "block";
     regForm.style.display = "flex";
