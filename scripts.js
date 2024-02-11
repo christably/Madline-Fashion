@@ -18,3 +18,35 @@ function register() {
     logForm.style.display = "none";
 }
 
+function validateForm() {
+    var userName = document.getElementById("userName").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (!userName || !email || !password || !confirmPassword) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    if (!/\S+@\S+\.\S+/.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+
+    if (password.length < 8 || !/[A-Z]/.test(password) || !/\d/.test(password)) {
+    alert("Password must be more than 8 characters and contain at least one capital letter and a number.");
+    return;
+    }
+
+    if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+    }
+
+    var verificationCode = prompt("Verification Code sent to your email. Enter code:");
+
+    if (verificationCode) {
+        alert("Signup Successful. Please proceed to login.");
+    }
+}
