@@ -73,6 +73,17 @@ header {
   background-color: #777;
 }
 
+.checkbox-container {
+    display: flex;
+    align-items: center;
+}
+
+#agreeCheckbox {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px; /* Adjust the margin to shift the checkbox to the left */
+}
+
 /* Main Content Styles */
 .main-content {
   display: flex;
