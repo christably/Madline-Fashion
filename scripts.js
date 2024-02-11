@@ -12,13 +12,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function register() {
-        validateForm(); // Call the validateForm function
-
-        // Continue with the form display logic if the form is valid
-        remReg.style.display = "none";
-        remLog.style.display = "block";
-        regForm.style.display = "flex";
-        logForm.style.display = "none";
+        if (validateForm()) {
+            remReg.style.display = "none";
+            remLog.style.display = "block";
+            regForm.style.display = "flex";
+            logForm.style.display = "none";
+            // Additional logic after successful registration
+            console.log("Registration successful");
+        }
     }
 
     function validateForm() {
@@ -29,29 +30,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (!userName || !email || !password || !confirmPassword) {
             alert("Please fill in all fields.");
-            return;
+            return false;
         }
 
         if (!/\S+@\S+\.\S+/.test(email)) {
             alert("Please enter a valid email address.");
-            return;
+            return false;
         }
 
         if (password.length < 8 || !/[A-Z]/.test(password) || !/\d/.test(password)) {
             alert("Password must be at least 8 characters long and contain at least one capital letter and one number.");
-            return;
+            return false;
         }
 
         if (password !== confirmPassword) {
             alert("Passwords do not match.");
-            return;
+            return false;
         }
 
         var verificationCode = prompt("Verification Code sent to your email. Enter code:");
 
-        if (verificationCode) {
-            alert("Signup Successful. Please proceed to login.");
+        if (!verificationCode) {
+            alert("Verification code is required.");
+            return false;
         }
+
+        // If all checks pass, return true
+        return true;
     }
 
     document.getElementById("removeLog").addEventListener("click", login);
