@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var remReg = document.getElementById("removeReg");
 
     function login() {
+        console.log("Login button clicked");
         remLog.style.display = "none";
         remReg.style.display = "block";
         logForm.style.display = "flex";
@@ -12,14 +13,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function register() {
-        if (validateForm()) {
-            remReg.style.display = "none";
-            remLog.style.display = "block";
-            regForm.style.display = "flex";
-            logForm.style.display = "none";
-            // Additional logic after successful registration
-            console.log("Registration successful");
-        }
+        console.log("Register button clicked");
+        // Display the registration form
+        remReg.style.display = "none";
+        remLog.style.display = "block";
+        regForm.style.display = "flex";
+        logForm.style.display = "none";
+        // Additional logic after successful registration
+        console.log("Registration form displayed");
     }
 
     function validateForm() {
@@ -59,8 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
         return true;
     }
 
-    document.getElementById("removeLog").addEventListener("click", login);
-    document.getElementById("removeReg").addEventListener("click", register);
+    console.log("New User? Register button click listener added");
+    remReg.addEventListener("click", register);
 
     document.getElementById("loginForm").addEventListener("submit", function(event) {
         event.preventDefault(); // Prevent the default form submission
@@ -69,7 +70,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.getElementById("registerForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent the default form submission
-        register(); // Call the register function to handle registration logic
+        if (!validateForm()) {
+            event.preventDefault(); // Prevent the default form submission only if validation fails
+        }
+        // Continue with default form submission if validation passes
+        console.log("Register form submitted");
     });
 });
