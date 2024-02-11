@@ -54,9 +54,11 @@
                     <h3>Register</h3>
                     <input type="text" placeholder="Username" required>
                     <input type="email" placeholder="E-mail" required>
-                    <input type="password" placeholder="Password" required minlength="5">
-                    <input type="checkbox" id="I agree to the following terms and conditions*" name="Terms and Condition"> I agree to the following terms and conditions
+                    <input type="password" placeholder="Password" pattern="^(?=.*[A-Z])(?=.*\d).{8,}$" required>
+                    <label>
+                    <input type="checkbox" required>
                     <small>I agree to the following Terms and Conditions*</small>
+                    </label>
                     <button type="submit" class="btn">Register</button>
                 </form>
             </div>
