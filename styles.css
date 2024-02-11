@@ -81,7 +81,7 @@ header {
 #agreeCheckbox {
     width: 16px;
     height: 16px;
-    margin-right: 5px; /* Adjust the margin to shift the checkbox to the left */
+    margin-left: 0px;
 }
 
 /* Main Content Styles */
