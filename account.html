@@ -57,8 +57,10 @@
                     <input type="password" placeholder="Password" pattern="^(?=.*[A-Z])(?=.*\d).{8,}$" required>
                     <input type="password" placeholder="Confirm Password">
                     <div class="checkbox-container">
-                        <input type="checkbox" id="agreeCheckbox" required>
-                        <small><label for="agreeCheckbox"><a href="terms_and_conditions.html">I agree to the following Terms and Conditions*</a></label></small>
+                        <label>
+                            <input type="checkbox" id="agreeCheckbox" name="agreeCheckbox">
+                            <a href="terms_and_conditions.html">I agree to the following Terms and Conditions*</a>
+                        </label>  
                     </div>
                     <button type="submit" class="btn">Register</button>
                 </form>
