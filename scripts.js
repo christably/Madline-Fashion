@@ -22,15 +22,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function validateForm() {
-        var firstName = document.getElementById("firstName").value;
-        var lastName = document.getElementById("lastName").value;
+        var userName = document.getElementById("userName").value;
         var email = document.getElementById("email").value;
-        var country = document.getElementById("country").value;
-        var gender = document.getElementById("gender").value;
         var password = document.getElementById("password").value;
         var confirmPassword = document.getElementById("confirmPassword").value;
 
-        if (!firstName || !lastName || !email || !country || !gender || !password || !confirmPassword) {
+        if (!userName || !email || !password || !confirmPassword) {
             alert("Please fill in all fields.");
             return;
         }
