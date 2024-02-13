@@ -108,3 +108,11 @@ function togglePasswordVisibility() {
 
     eyeIcon.innerHTML = type === "password" ? "&#128065;" : "&#128065;&#65039;";
 }
+
+function login() {
+    showloginForm();
+}
+
+function register() {
+    showregisterForm();
+}
