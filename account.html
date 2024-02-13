@@ -5,14 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Account | Madline Fashion</title>
         <link rel="stylesheet" href="css/categories.css">
-        <link rel="stylesheet" href="css/nav.css">
-        <link rel="stylesheet" href="css/madline.css">
-        <link rel="stylesheet" href="css/style_index.css">
+         <link rel="stylesheet" href="css/nav.css">
+         <link rel="stylesheet" href="css/madline.css">
+          <link rel="stylesheet" href="css/style_index.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" type="image/svg+xml" href="src/m.png">
     </head>
     <body>
-        <nav>
+          <nav>
       <div class="logo">
         <h3><a href="products.html" class="logo-name">Madline Fashion🦋 </a></h3>
       </div>
@@ -41,54 +41,22 @@
     <p></p><p></p>
         <div class="container">
             <div class="formPage">
-                <div class="btn" id="removeLog" onclick="Login()">Login</button>
-                <div class="btn" id="removeReg" onclick="SignUp()">Sign Up</button>
+                <div class="btn" id="removeLog" onclick="login()">Existing User? Login</div>
+                <div class="btn" id="removeReg" onclick="register()">New User? Register</div>
                 <form class= "showForm" id="loginForm">
                     <h3>Login</h3>
-                    <label for="loginUsernameEmail">Username or Email:</label>
-                    <input type="text" id="loginUsernameEmail" placeholder="loginUsernameEmail" required>
-                    
-                    <label for="loginPassword">Password:</label>
-                    <input type="password" id="loginPassword" placeholder="loginPassword" required>
-                    
-                    <button type="button" onclick="validateLoginForm()">Login</button>
+                    <input type="text" placeholder="Username" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit" class="btn">Login</button>
                     <a href="forgotpass.html">Forgot Password</a>
                 </form>
-                
-                <form class="showForm" id="signupForm">
-                    <h3>Sign Up</h3>
-                    <label for="firstName">First Name:</label>
-                    <input type="text" id="firstName" placeholder="firstName" required>
-                    
-                    <label for="lastName">Last Name:</label>
-                    <input type="text" id="lastName" placeholder="lastName" required>
-                    
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" placeholder="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
-                    
-                    <label for="country">Country:</label>
-                    <input type="text" id="country" placeholder="country" required>
-
-                    <label for="gender">Gender:</label>
-                    <select id="gender" name="gender" required>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
-                    </select>
-
-                    <label for="password">Password:</label>
-                    <div style="position: relative;">
-                    <input type="password" id="password" placeholder="password" pattern="^(?=.*[A-Z])(?=.*\d).{8,}$" required>
-                        <span class="eye-icon" onclick="togglePasswordVisibility()">
-                            <!-- Unicode for an open eye icon -->
-                            &#128065;
-                        </span>
-                    </div>
-                    
-                    <label for="confirmPassword">Confirm Password:</label>
-                    <input type="password" id="confirmPassword" placeholder="confirmPassword" required>
+                <form class="showForm" id="registerForm">
+                    <h3>Register</h3>
+                    <input type="text" placeholder="Username" required>
+                    <input type="email" placeholder="E-mail" required>
+                    <input type="password" placeholder="Password" required minlength="5">
                     <small>I agree to the following Terms and Conditions*</small>
-                    <button type="button" onclick="validateSignUpForm()" class="btn">Sign Up</button>
+                    <button type="submit" class="btn">Register</button>
                 </form>
             </div>
         </div>
