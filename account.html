@@ -45,18 +45,18 @@
                 <div class="btn" id="removeReg" onclick="register()">New User? Register</div>
                 <form class= "showForm" id="loginForm">
                     <h3>Login</h3>
-                    <input type="text" placeholder="Username" required>
+                    <input type="text" placeholder="Email" required>
                     <input type="password" placeholder="Password" required>
-                    <button type="submit" class="btn">Login</button>
+                    <button type="button" onclick="validateloginForm() class="btn">Login</button>
                     <a href="forgotpass.html">Forgot Password</a>
                 </form>
                 <form class="showForm" id="registerForm">
                     <h3>Register</h3>
-                    <input type="text" placeholder="Username" required>
-                    <input type="email" placeholder="E-mail" required>
-                    <input type="password" placeholder="Password" required minlength="5">
+                    <input type="email" id="email" placeholder="E-mail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
+                    <input type="password" id="password" placeholder="Password" pattern="^(?=.*[A-Z])(?=.*\d).{8,}$" required>
+                    <input type="password" id="confirmpassword" placeholder="Confirm Password" required>
                     <small>I agree to the following Terms and Conditions*</small>
-                    <button type="submit" class="btn">Register</button>
+                    <button type="button" onclick="validateregisterForm() class="btn">Register</button>
                 </form>
             </div>
         </div>
