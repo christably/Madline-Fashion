@@ -8,26 +8,22 @@ function isValidPassword(password) {
     return password.length >= 8 && /[A-Z]/.test(password) && /\d/.test(password);
 }
 
-function showSignUpForm() {
-    document.getElementById("signupForm").style.display = "block";
+function showregisterForm() {
+    document.getElementById("registerForm").style.display = "block";
     document.getElementById("loginForm").style.display = "none";
 }
 
-function showLoginForm() {
-    document.getElementById("signupForm").style.display = "none";
+function showloginForm() {
+    document.getElementById("registerForm").style.display = "none";
     document.getElementById("loginForm").style.display = "block";
 }
 
-function validateSignUpForm() {
-    var firstName = document.getElementById("firstName").value;
-    var lastName = document.getElementById("lastName").value;
+function validateregisterForm() {
     var email = document.getElementById("email").value;
-    var country = document.getElementById("country").value;
-    var gender = document.getElementById("gender").value;
     var password = document.getElementById("password").value;
-    var confirmPassword = document.getElementById("confirmPassword").value;
+    var confirmPassword = document.getElementById("confirmpassword").value;
 
-    if (!firstName || !lastName || !email || !country || !gender || !password || !confirmPassword) {
+    if (!email || !password || !confirmPassword) {
         alert("Please fill in all fields.");
         return;
     }
@@ -74,16 +70,16 @@ function validateSignUpForm() {
     }
 }
 
-async function validateLoginForm() {
-    var usernameOrEmail = document.getElementById("loginUsernameEmail").value;
-    var password = document.getElementById("loginPassword").value;
+async function validateloginForm() {
+    var Email = document.getElementById("loginemail").value;
+    var password = document.getElementById("loginpassword").value;
 
-    if (!usernameOrEmail || !password) {
+    if (!Email || !password) {
         alert("Please fill in all fields.");
         return;
     }
 
-    if (!isValidEmail(usernameOrEmail)) {
+    if (!isValidEmail(Email)) {
         alert("Invalid email address or username.");
         return;
     }
@@ -93,7 +89,7 @@ async function validateLoginForm() {
         return;
     }
 
-    if (await serverSideAuthentication(usernameOrEmail, password)) {
+    if (await serverSideAuthentication(Email, password)) {
         alert("Login successful! Redirecting...");
         // Add further actions like redirecting to a dashboard
     } else {
@@ -103,7 +99,7 @@ async function validateLoginForm() {
 
 function togglePasswordVisibility() {
     var passwordInput = document.getElementById("password");
-    var confirmPasswordInput = document.getElementById("confirmPassword");
+    var confirmPasswordInput = document.getElementById("confirmpassword");
     var eyeIcon = document.querySelector('.eye-icon');
 
     var type = passwordInput.type === "password" ? "text" : "password";
