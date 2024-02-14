@@ -56,16 +56,30 @@
                     <input type="password" id="password" placeholder="Password" required>
                     <input type="password" id="confirmpassword" placeholder="Confirm Password" pattern="^(?=.*[A-Z])(?=.*\d).{8,}$" required>
                     <small>I agree to the following Terms and Conditions*</small>
-                    <button type="submit" class="btn">Register</button>
-                    <div id="verificationModal" class="modal">
+                    <button type="button" class="btn btn-primary" onclick="showVerificationModal()">
+                        Register
+                    </button>
+                </form>
+                <div class="modal fade" id="verificationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
                         <div class="modal-content">
-                            <span class="close" onclick="closeVerificationModal()">&times;</span>
-                            <p>Please enter the verification code sent to your email:</p>
-                            <input type="text" id="verificationCodeInput">
-                            <button onclick="verifyCode()">Verify</button>
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Verification Code</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeVerificationModal()">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Please enter the verification code sent to your email:</p>
+                                <input type="text" id="verificationCodeInput" class="form-control">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeVerificationModal()">Close</button>
+                                <button type="button" class="btn btn-primary" onclick="verifyCode()">Verify</button>
+                            </div>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
          <!-- FOOTER -->
