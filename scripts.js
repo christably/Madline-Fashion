@@ -63,59 +63,80 @@ function validateregisterForm() {
         return;
     }
 
+function showVerificationModal() {
+    document.getElementById("verificationModal").style.display = "block";
+  }
+
+function closeVerificationModal() {
+    document.getElementById("verificationModal").style.display = "none";
+  }
+
+function verifyCode() {
+    var enteredCode = document.getElementById("verificationCodeInput").value;
+    // Add your verification logic here
+    // Example: Check enteredCode against the expected code
+    if (enteredCode === "your_expected_code") {
+        alert("Verification successful! You can now proceed.");
+        // Additional logic or redirection
+        closeVerificationModal();
+    } else {
+        alert("Incorrect verification code. Please try again.");
+        // Handle incorrect code, maybe allow a few attempts
+    }
+}
     // Remaining code for verification code and signup
-    var sentVerificationCode = "123456"; // Replace with actual code sent to user's email
+    //var sentVerificationCode = "123456"; // Replace with actual code sent to user's email
     
     // Initialize attempts counter
-    var attempts = 0;
-    var maxAttempts = 3;
+    //var attempts = 0;
+    //var maxAttempts = 3;
     
-    do {
-        var verificationCode = prompt("Verification Code sent to your email. Enter code:");
+    //do {
+        //var verificationCode = prompt("Verification Code sent to your email. Enter code:");
         
-        if (!verificationCode) {
-            alert("Please Enter Your Verification Code");
-        } else if (verificationCode !== sentVerificationCode) {
-            alert("Incorrect Code, Please Try Again");
-            attempts++;
-        } else {
-            alert("Signup Successful. Please Proceed to Login");
-            break; // Exit the loop if the verification code is correct
-        }
+        //if (!verificationCode) {
+            //alert("Please Enter Your Verification Code");
+        //} else if (verificationCode !== sentVerificationCode) {
+            //alert("Incorrect Code, Please Try Again");
+            //attempts++;
+        //} else {
+            //alert("Signup Successful. Please Proceed to Login");
+            //break; // Exit the loop if the verification code is correct
+        //}
     
-    } while (attempts < maxAttempts);
+    //} while (attempts < maxAttempts);
     
-    if (attempts === maxAttempts) {
-        alert("Maximum attempts reached. Please try again later.");
-    }
-}
+    //if (attempts === maxAttempts) {
+        //alert("Maximum attempts reached. Please try again later.");
+    //}
+//}
 
-async function validateloginForm() {
-    var Email = document.getElementById("loginemail").value;
-    var password = document.getElementById("loginpassword").value;
+//async function validateloginForm() {
+    //var Email = document.getElementById("loginemail").value;
+    //var password = document.getElementById("loginpassword").value;
 
-    if (!Email || !password) {
-        alert("Please fill in all fields.");
-        return;
-    }
+    //if (!Email || !password) {
+        //alert("Please fill in all fields.");
+        //return;
+    //}
 
-    if (!isValidEmail(Email)) {
-        alert("Invalid email address or username.");
-        return;
-    }
+    //if (!isValidEmail(Email)) {
+        //alert("Invalid email address or username.");
+        //return;
+    //}
 
-    if (!isValidPassword(password)) {
-        alert("Invalid password.");
-        return;
-    }
+    //if (!isValidPassword(password)) {
+        //alert("Invalid password.");
+        //return;
+    //}
 
-    if (await serverSideAuthentication(Email, password)) {
-        alert("Login successful! Redirecting...");
+    //if (await serverSideAuthentication(Email, password)) {
+        //alert("Login successful! Redirecting...");
         // Add further actions like redirecting to a dashboard
-    } else {
-        alert("Incorrect details. Please try again.");
-    }
-}
+    //} else {
+        //alert("Incorrect details. Please try again.");
+    //}
+//}
 
 function togglePasswordVisibility() {
     var passwordInput = document.getElementById("password");
