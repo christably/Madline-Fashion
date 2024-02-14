@@ -57,6 +57,14 @@
                     <input type="password" id="confirmpassword" placeholder="Confirm Password" pattern="^(?=.*[A-Z])(?=.*\d).{8,}$" required>
                     <small>I agree to the following Terms and Conditions*</small>
                     <button type="submit" class="btn">Register</button>
+                    <div id="verificationModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeVerificationModal()">&times;</span>
+                            <p>Please enter the verification code sent to your email:</p>
+                            <input type="text" id="verificationCodeInput">
+                            <button onclick="verifyCode()">Verify</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
