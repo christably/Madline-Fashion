@@ -63,15 +63,15 @@ function validateregisterForm() {
         return;
     }
 
-function showVerificationModal() {
-    document.getElementById("verificationModal").style.display = "block";
+    function showVerificationModal() {
+    $('#verificationModal').modal('show');
   }
 
-function closeVerificationModal() {
-    document.getElementById("verificationModal").style.display = "none";
+  function closeVerificationModal() {
+    $('#verificationModal').modal('hide');
   }
 
-function verifyCode() {
+  function verifyCode() {
     var enteredCode = document.getElementById("verificationCodeInput").value;
     // Add your verification logic here
     // Example: Check enteredCode against the expected code
@@ -83,7 +83,8 @@ function verifyCode() {
         alert("Incorrect verification code. Please try again.");
         // Handle incorrect code, maybe allow a few attempts
     }
-}
+  }
+
     // Remaining code for verification code and signup
     var sentVerificationCode = "123456"; // Replace with actual code sent to user's email
     
